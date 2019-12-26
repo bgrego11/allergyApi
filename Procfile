@@ -1,0 +1,1 @@
+web: gunicorn allergy_alert.wsgi --log-file -
