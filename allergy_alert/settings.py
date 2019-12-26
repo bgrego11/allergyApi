@@ -60,6 +60,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_USE_SESSIONS = False
+
 ROOT_URLCONF = 'allergy_alert.urls'
 
 TEMPLATES = [
