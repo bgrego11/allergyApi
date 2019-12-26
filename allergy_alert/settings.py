@@ -136,16 +136,14 @@ USE_TZ = True
 'new comment'
 
 
-PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-STATIC_ROOT  =   os.path.join(PROJECT_ROOT, 'staticfiles')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_URL = '/static/'
-
-# Extra lookup directories for collectstatic to find static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
-    os.path.join(PROJECT_ROOT, 'static'),
+    os.path.join(BASE_DIR, 'static'),
 )
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'root') 
 
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
