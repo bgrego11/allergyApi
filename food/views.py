@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
-from .models import Food, Ingredient
+from .models import Food, Ingredient, LogEntry
 from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer, FoodSerializer
+from .serializers import UserSerializer, GroupSerializer, FoodSerializer, LogEntrySerializer
 # Create your views here.
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -27,4 +27,11 @@ class FoodViewSet(viewsets.ModelViewSet):
     """
     queryset = Food.objects.all()
     serializer_class = FoodSerializer
+
+class LogEntryViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = LogEntry.objects.all()
+    serializer_class = LogEntrySerializer
 

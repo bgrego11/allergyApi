@@ -25,7 +25,7 @@ SECRET_KEY = 'ovh%ke$wcb@^tkxie%g$m9(iw!b_rgucyhjm*xs*ont%!%zgz@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['allergy-api.herokuapp.com']
+ALLOWED_HOSTS = ['allergy-api.herokuapp.com','*']
 
 
 # Application definition
