@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from .models import Food, Ingredient, LogEntry
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from .serializers import UserSerializer, GroupSerializer, FoodSerializer, LogEntrySerializer
 # Create your views here.
 
@@ -27,6 +27,9 @@ class FoodViewSet(viewsets.ModelViewSet):
     """
     queryset = Food.objects.all()
     serializer_class = FoodSerializer
+
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name', 'brand']
 
 class LogEntryViewSet(viewsets.ModelViewSet):
     """
